@@ -1,0 +1,134 @@
+/** button **/
+
+
+.theme-btn{
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 500;
+    padding: 15px 40px;
+    font-family: var(--title-font);
+    color: #fff;
+    text-align: center;
+    border-radius: 55px;
+    z-index: 1;
+    transition: all 500ms ease;
+  }
+  
+  .theme-btn:hover{
+    color: #fff;
+  }
+  
+  .theme-btn.btn-one:hover{
+    background: var(--secondary-color);
+  }
+  
+  .theme-btn:before{
+    position: absolute;
+    content: '';
+    background: var(--secondary-color);
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    transform: scale(0,0);
+    z-index: -1;
+    transition: all 500ms ease;
+  }
+  
+  .theme-btn:hover:before{
+    transform: scale(1,1);
+  }
+  
+  .theme-btn.btn-two{
+    background: #fff;
+    color: #111111;
+    padding: 15px 30px;
+  }
+  
+  .theme-btn.btn-two:hover{
+    color: #fff;
+    background: var(--theme-color);
+  }
+  
+  .theme-btn.btn-two::before{
+    background: var(--theme-color);
+  }
+  
+  .theme-btn.btn-three{
+    padding: 14px 39px;
+    color: var(--theme-color);
+    border: 1px solid var(--theme-color);
+  }
+  
+  .theme-btn.btn-three:hover{
+    color: #fff;
+    border-color: var(--secondary-color);
+  }
+  
+  .parallax-bg{
+    position: absolute;
+    left: 0px;
+    top: -30%;
+    width: 100%;
+    height: calc(100% + 30%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  
+  /** styled-pagination */
+  
+  .pagination{
+    position: relative;
+    display: block;
+  }
+  
+  .pagination li{
+    position: relative;
+    display: inline-block;
+    margin: 0px 5px;
+  }
+  
+  .pagination li a{
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--title-font);
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    background: #ffffff;
+    box-shadow: 0px 10px 40px 10px rgba(0, 0, 0, 0.07);
+    text-align: center;
+    color: #000;
+    border-radius: 50%;
+    z-index: 1;
+    transition: all 500ms ease;
+  }
+  
+  .pagination li a:hover,
+  .pagination li a.current{
+    color: #fff;
+    background: var(--theme-color);
+    border-color: var(--theme-color);
+  }
+  
+  .pagination li:first-child a,
+  .pagination li:last-child a{
+    font-size: 16px;
+    line-height: 64px;
+  }
+  
+  .sec-pad{
+    padding: 142px 0px 150px 0px;
+  }
+  
+  .mr-0{
+    margin: 0px !important;
+  }

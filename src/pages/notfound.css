@@ -1,0 +1,47 @@
+/* 404 Page styles */
+.not-found-page {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 1rem;
+  }
+  
+  .error-code {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+  }
+  
+  .error-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .error-message {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .navigation-options {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  @media (max-width: 768px) {
+    .error-code {
+      font-size: 3rem;
+    }
+  
+    .error-title {
+      font-size: 1.5rem;
+    }
+  
+    .navigation-options {
+      flex-direction: column;
+    }
+  }
