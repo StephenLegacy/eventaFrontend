@@ -11,6 +11,8 @@ import shape24 from '../assets/images/shapes/shape-24.png';
 import shape25 from '../assets/images/shapes/shape-25.png';
 import shape26 from '../assets/images/shapes/shape-26.png';
 
+// import logo from './assets/logo.png' --- use this 
+
 // Contact component, now the default export with plain CSS styling.
 export default function Contact() {
   return (
@@ -21,7 +23,9 @@ export default function Contact() {
           <div
             className="pattern-1"
             style={{ backgroundImage: `url(${pattern1})` }}
-          ></div>
+          >
+
+          </div>
           <div
             className="pattern-2"
             style={{ backgroundImage: `url(${pattern2})` }}
@@ -70,6 +74,7 @@ export default function Contact() {
             <h2>Contact Information</h2>
           </div>
           <div className="info-blocks-grid">
+
             {/* Location Block */}
             <div className="info-block">
               <div className="icon-box">📍</div>
@@ -78,6 +83,7 @@ export default function Contact() {
                 Crossroads Mall - Karen, <br />Nairobi
               </p>
             </div>
+
             {/* Email Address Block */}
             <div className="info-block">
               <div className="icon-box">📧</div>
@@ -88,6 +94,7 @@ export default function Contact() {
                 <a href="mailto:support@example.com">support@eventa.com</a>
               </p>
             </div>
+
             {/* Phone Number Block */}
             <div className="info-block">
               <div className="icon-box">📞</div>

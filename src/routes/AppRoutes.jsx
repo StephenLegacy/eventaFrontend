@@ -9,6 +9,7 @@ import PrivateRoute from './PrivateRoute';
 import NotFound from '../pages/NotFound';
 import Contact from '../pages/Contact';
 import About from '../pages/About'
+import Testimonials from '../components/ui/Testimonials'
 
 function AppRoutes() {
   return (
@@ -20,6 +21,7 @@ function AppRoutes() {
       <Route path="/register" element={<Register />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/about" element={<About />} />
+      <Route path="/testimonials" element={<Testimonials />} />
       
       {/* Private route wrapper: Ensure PrivateRoute uses <Outlet /> inside */}
       <Route path="/dashboard" element={<PrivateRoute />}>

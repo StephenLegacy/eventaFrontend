@@ -5,7 +5,7 @@ import EventCard from '../components/events/EventCard';
 // import Footer from '../components/Footer.js'; 
 import Features from '../components/ui/Features.js'; 
 // import Pricing from '../components/Pricing.js';   
-// import Services from '../components/Services.js'; 
+import Services from '../components/ui/Services.js'; 
 // import FAQ from '../components/FAQ.js';        
 // import CTA from '../components/CTA.js'; 
 import './home.css';
@@ -110,6 +110,8 @@ function Home() {
         </div>
         
       </section>
+
+      <Services />
     </div>
   );
 }
