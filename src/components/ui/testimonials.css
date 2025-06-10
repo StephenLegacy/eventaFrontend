@@ -1,0 +1,296 @@
+@import '~owl.carousel/dist/assets/owl.carousel.min.css';
+@import '~owl.carousel/dist/assets/owl.theme.default.min.css';
+
+/*------------------------------------
+    Default Variables (Ensure these are defined if not globally)
+------------------------------------*/
+:root {
+    --theme-color: #6457C6;
+    --primary-color: #F7F1FF;
+    --secondary-color: #FBEEF5;
+    --tertiary-color: #EBF8FF;
+    --quaternary-color: #FEF7EA;
+    --light-color: #797979;
+    --dark-color: #2F2F2F;
+    --heading-color: #2F2F2F;
+    --title-color: #373737;
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --extra-light-color: #F9F6FF;
+    --gradient-color: linear-gradient(to right, #6457C6, #C0ADFF);
+    --gradient-hover: linear-gradient(to right, #C0ADFF, #6457C6);
+    --theme-color-rgb: 100, 87, 198; /* RGB for --theme-color for rgba usage */
+}
+
+/*------------------------------------
+    Testimonial Section
+------------------------------------*/
+.testimonial-section {
+    position: relative;
+    background: var(--extra-light-color);
+    overflow: hidden;
+    padding-top: 100px;
+    padding-bottom: 140px;
+    z-index: 1; /* Ensure content is above shapes */
+}
+
+.testimonial-section .shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* Background shapes */
+}
+
+.testimonial-section .shape .shape-2,
+.testimonial-section .shape .shape-3 {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.1;
+}
+
+.testimonial-section .shape .shape-3 {
+    top: 10%;
+    left: 5%;
+    width: 150px;
+    height: 150px;
+    animation: floatOne 8s ease-in-out infinite; /* Floating effect */
+}
+
+.testimonial-section .shape .shape-2 {
+    bottom: 5%;
+    right: 10%;
+    width: 180px;
+    height: 180px;
+    animation: floatTwo 10s ease-in-out infinite alternate; /* Floating effect */
+}
+
+/* Keyframe animations for floating shapes */
+@keyframes floatOne {
+    0% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(-20px) translateX(10px); }
+    100% { transform: translateY(0px) translateX(0px); }
+}
+
+@keyframes floatTwo {
+    0% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(15px) translateX(-10px); }
+    100% { transform: translateY(0px) translateX(0px); }
+}
+
+.auto-container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 15px;
+    z-index: 1; /* Ensure content is above shapes */
+}
+
+.sec-title {
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+.sec-title .sub-title {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--theme-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.sec-title h2 {
+    font-size: 50px;
+    line-height: 60px;
+    color: var(--heading-color);
+    font-weight: 700;
+}
+
+/*
+    IMPORTANT: Owl Carousel handles the 'display: flex', 'width', and 'margin' for its items.
+    The `three-item-carousel` class should primarily serve as a container for Owl Carousel,
+    not as a direct flex parent for the testimonial blocks if Owl Carousel is active.
+*/
+.three-item-carousel {
+    /* Owl Carousel will manage the layout internally. */
+    /* Remove or comment out these if `OwlCarousel` component directly manages the items: */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* gap: 30px; */
+    /* flex-wrap: wrap; */
+}
+
+.testimonial-block-one {
+    position: relative;
+    padding: 0 15px; /* Add padding to account for carousel item spacing if needed,
+                        otherwise Owl Carousel's 'margin' option will handle it.
+                        If using Owl Carousel's 'margin', this padding might be redundant. */
+    /*
+        Owl Carousel will set the width of its items (e.g., .owl-item).
+        These properties might conflict and should be removed or adjusted carefully:
+        flex: 0 0 32%;
+        max-width: 380px;
+        margin-bottom: 30px;
+    */
+    perspective: 1000px; /* For 3D transform on hover */
+    /* margin-bottom is handled by Owl Carousel's default layout or `margin` option if applied globally to items */
+}
+
+.testimonial-block-one .inner-box {
+    background: rgba(255, 255, 255, 0.15); /* Glassmorphic background */
+    backdrop-filter: blur(10px); /* Glassmorphic blur */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for glass effect */
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition */
+    transform-style: preserve-3d; /* For 3D transform */
+    position: relative; /* For the subtle inner shadow */
+}
+
+/* Inner shadow for glassmorphic effect */
+.testimonial-block-one .inner-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2); /* Inner light shadow */
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+.testimonial-block-one .inner-box:hover {
+    transform: translateY(-15px) rotateX(2deg) rotateY(2deg) scale(1.03); /* Enhanced hover effect */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+    border-color: rgba(var(--theme-color-rgb), 0.5); /* Highlight border on hover */
+}
+
+.testimonial-block-one .inner-box .thumb-box {
+    margin-bottom: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--theme-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 3px rgba(var(--theme-color-rgb), 0.3); /* Subtle glow around image */
+}
+
+.testimonial-block-one .inner-box .thumb-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-block-one .inner-box h4 {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 600;
+    color: var(--title-color);
+    margin-bottom: 5px;
+}
+
+.testimonial-block-one .inner-box .designation {
+    display: block;
+    font-size: 15px;
+    color: var(--light-color);
+    margin-bottom: 15px;
+}
+
+.testimonial-block-one .inner-box .rating {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.testimonial-block-one .inner-box .rating li {
+    font-size: 16px;
+    color: #FFC107;
+    margin-right: 3px;
+}
+
+.testimonial-block-one .inner-box p {
+    font-size: 17px;
+    line-height: 28px;
+    color: var(--dark-color); /* Stronger text color for readability on glass */
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* Owl Carousel Custom Styles - these are correctly applied for Owl Carousel's structure */
+.owl-carousel.dots-style-one .owl-dots {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.owl-carousel.dots-style-one .owl-dots .owl-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: rgba(var(--theme-color-rgb), 0.3);
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.owl-carousel.dots-style-one .owl-dots .owl-dot.active {
+    background: var(--theme-color);
+    width: 25px;
+    border-radius: 6px;
+}
+
+/*------------------------------------
+    Responsive CSS Adjustments
+    (These will be largely overridden by Owl Carousel's responsive options,
+    but keep them as fallbacks or for non-carousel scenarios.)
+------------------------------------*/
+@media only screen and (max-width: 991px) {
+    /* If Owl Carousel is controlling widths, these might not apply directly to .testimonial-block-one,
+       but rather to Owl Carousel's internal item classes like .owl-item. */
+    /* .testimonial-block-one {
+        flex: 0 0 48%;
+    } */
+
+    .sec-title h2 {
+        font-size: 42px; /* Slightly adjusted for better medium-screen fit */
+        line-height: 52px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    /* As above, Owl Carousel's `items: 1` will dictate single column */
+    /* .testimonial-block-one {
+        flex: 0 0 100%;
+        max-width: none;
+    } */
+
+    .sec-title h2 {
+        font-size: 36px;
+        line-height: 46px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .testimonial-block-one .inner-box {
+        padding: 30px 20px;
+        min-height: 300px;
+    }
+
+    .sec-title h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+}
