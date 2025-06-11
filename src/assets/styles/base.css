@@ -1,120 +1,176 @@
-/* Base styles and variables */
 :root {
-    --primary-color: #6c63ff;
-    --secondary-color: #4d44db;
-    --accent-color: #ff6584;
-    --dark-color: #2d3748;
-    --light-color: #f7fafc;
-    --gray-color: #a0aec0;
-    --success-color: #48bb78;
-    --warning-color: #ed8936;
-    --danger-color: #f56565;
-    
-    --glass-bg: rgba(255, 255, 255, 0.15);
-    --glass-border: 1px solid rgba(255, 255, 255, 0.18);
-    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    --glass-blur: blur(8px);
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: var(--light-color);
-    min-height: 100vh;
-    line-height: 1.6;
-  }
-  
-  .app-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .main-content {
-    flex: 1;
-    padding: 2rem;
-  }
-  
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Utility classes */
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  .flex {
-    display: flex;
-  }
-  
-  .flex-col {
-    flex-direction: column;
-  }
-  
-  .items-center {
-    align-items: center;
-  }
-  
-  .justify-center {
-    justify-content: center;
-  }
-  
-  .gap-1 {
-    gap: 0.5rem;
-  }
-  
-  .gap-2 {
-    gap: 1rem;
-  }
-  
-  .gap-4 {
-    gap: 2rem;
-  }
-  
-  .mt-2 {
-    margin-top: 1rem;
-  }
-  
-  .mt-4 {
-    margin-top: 2rem;
-  }
-  
-  .mb-2 {
-    margin-bottom: 1rem;
-  }
-  
-  .p-4 {
-    padding: 2rem;
-  }
-  
-  .rounded {
-    border-radius: 0.5rem;
-  }
-  
-  .rounded-lg {
-    border-radius: 1rem;
-  }
-  
-  .full-width {
-    width: 100%;
-  }
+  --primary-color: #80080;
+  --secondary-color: #4d44db;
+  --accent-color: #ff6584;
+  --dark-color: #2d3748;
+  --light-color: #f7fafc;
+  --gray-color: #a0aec0;
+  --success-color: #48bb78;
+  --warning-color: #ed8936;
+  --danger-color: #f56565;
+
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --glass-blur: blur(8px);
+
+  /* Change this line only: */
+  --theme-color: #800080; /* Purple */
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #800080; /* Normal purple */
+  backdrop-filter: var(--glass-blur); /* Apply blur for the glass effect */
+  -webkit-backdrop-filter: var(--glass-blur); /* Safari support */
+  color: var(--dark-color);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%; /* Ensure container takes full width */
+}
+
+.main-content {
+  flex: 1;
+  /* Removed padding here to allow full-width elements to stretch */
+  width: 100%; /* Ensure main-content takes full width */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Default vertical margin for common block elements to prevent collision */
+p {
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.75rem;
+  margin-top: 1.5rem; /* Add some top margin for headings */
+}
+
+/* Ensure first heading/paragraph doesn't have top margin if it's the first child of its parent */
+.main-content > h1:first-child,
+.main-content > h2:first-child,
+.main-content > h3:first-child,
+.main-content > h4:first-child,
+.main-content > h5:first-child,
+.main-content > h6:first-child,
+.main-content > p:first-child {
+  margin-top: 0;
+}
+
+
+/* Utility classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Kept padding for content inside the container */
+}
+
+/* New class for full-width sections/elements */
+.stretch-full-width {
+  width: 100vw; /* Takes full viewport width */
+  position: relative; /* Allows positioning relative to its normal flow */
+  left: 50%; /* Moves element halfway to the right */
+  right: 50%; /* Moves element halfway to the left */
+  margin-left: -50vw; /* Pushes element back to the left by half the viewport width */
+  margin-right: -50vw; /* Adjusts margin to counter the positioning */
+
+  /* Alternative for full-width without viewport units, if parent is already full width: */
+  /* width: 100%; */ 
+  /* margin-left: 0; */
+  /* margin-right: 0; */
+  /* padding-left: 0; */
+  /* padding-right: 0; */
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-1 {
+  gap: 0.5rem;
+}
+
+.gap-2 {
+  gap: 1rem;
+}
+
+.gap-4 {
+  gap: 2rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.p-4 {
+  padding: 2rem;
+}
+
+/* Spacing utility for consistent vertical spacing between child elements */
+.space-y-2 > *:not(:last-child) {
+  margin-bottom: 1rem; /* 1rem spacing between children */
+}
+.space-y-4 > *:not(:last-child) {
+  margin-bottom: 2rem; /* 2rem spacing between children */
+}
+
+.rounded {
+  border-radius: 0.5rem;
+}
+
+.rounded-lg {
+  border-radius: 1rem;
+}
+
+.full-width {
+  width: 100%;
+}
