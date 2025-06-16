@@ -7,8 +7,10 @@ import axios from 'axios';
  * - Authorization headers
  * - Error formatting
  */
+
+
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api',
+  baseURL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api/v1',
 });
 
 // Request interceptor to add auth token
