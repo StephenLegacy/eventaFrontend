@@ -50,7 +50,7 @@ const About = () => {
         <div className="auto-container">
           <div className="content-box">
             <span className="sub-title-three">About us</span>
-            <h1>About Us</h1>
+            {/* <h1>About Us</h1> */}
             <p>
               Simplify Ticketing. Maximize Attendance <br /> At Eventa, we believe organizing events should be as exciting as attending them. Our mission is to empower creators, organizers, and communities with smart, seamless tools that make event management simple—from planning to check-in.
             </p>
@@ -64,8 +64,6 @@ const About = () => {
       {/* --- Page Title Section End --- */}
 
       {/* --- About Style Three Section --- */}
-      {/* This section provides an "About Us" overview with an image column and a content column.
-          It highlights key features of the Eventa app. */}
       <section className="about-style-three pb_150">
         <div className="pattern-layer" style={{ backgroundImage: `url(${shape67})` }}></div>
         <div className="auto-container">
@@ -113,13 +111,18 @@ const About = () => {
                   </div>
                   <div className="text-box mb_40">
                     <p>
-                      At Eventa, we give event creators the tools to turn ideas into unforgettable experiences. Whether you're planning a concert, a meetup, or a cosplay expo, Eventa helps you manage ticketing, promote with ease, and focus on what really matters—the magic of the moment.
+                      At Eventa, we give event creators the tools to turn ideas into unforgettable experiences. 
+                      Whether you're planning a concert, a meetup, or a cosplay expo, Eventa helps you manage 
+                      ticketing, promote with ease, and focus on what really matters—the magic of the moment.
                     </p>
                   </div>
                   <div className="inner-box">
                     <div className="single-item mb_40">
                       <div className="icon-box">
-                        {/* ICON FONT USAGE: This `<i>` tag with a class expects a CSS icon font library to be loaded. */}
+
+                        {/* ICON FONT USAGE: This `<i>` tag with a class expects a CSS icon 
+                        font library to be loaded. */}
+
                         <i className="icon-13"></i>
                       </div>
                       <h3>Keep it simple and easy</h3>
@@ -140,7 +143,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      {/* --- About Style Three Section End --- */}
+      
 
       {/* --- Rating Section --- */}
       {/* This section showcases client ratings and achievements, featuring images and star ratings. */}
@@ -211,7 +214,7 @@ const About = () => {
       </section>
       {/* --- Rating Section End --- */}
 
-      {/* --- Feature Style Two Section --- */}
+
       {/* This section highlights core features of the Eventa platform with descriptive text and icons. */}
       <section className="feature-style-two pb_120 centred">
         <div className="auto-container">
@@ -227,6 +230,7 @@ const About = () => {
                     {/* ICON FONT USAGE: This `<i>` tag with a class expects a CSS icon font library to be loaded. */}
                     <i className="icon-16"></i>
                   </div>
+
                   <h3>
                     <a href="#">Easy Event Creation</a>
                   </h3>
@@ -252,8 +256,10 @@ const About = () => {
               <div className="feature-block-one" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1100">
                 <div className="inner-box">
                   <div className="icon-box">
+
                     {/* ICON FONT USAGE: This `<i>` tag with a class expects a CSS icon font library to be loaded. */}
                     <i className="icon-18"></i>
+
                   </div>
                   <h3>
                     <a href="#">Real time analytics</a>
@@ -282,6 +288,7 @@ const About = () => {
       {/* --- Feature Style Two Section End --- */}
 
       {/* --- Glance Section --- */}
+
       {/* This section provides a "glance" at the app's overall impact, featuring patterns and a title. */}
       <section className="glance-section centred">
         <div className="auto-container">
@@ -302,7 +309,8 @@ const About = () => {
               <p>The global leader in event management</p>
             </div>
             {/* Placeholder for a dashboard image, currently commented out */}
-            {/* <figure className="image-box><img src="assets/images/resource/dashboard-1.jpg" alt=""></figure> Our dashboard will go here*/}
+            {/* <figure className="image-box><img src="assets/images/resource/dashboard-1.jpg" alt=""></figure> 
+            Our dashboard will go here*/}
           </div>
         </div>
       </section>
@@ -350,7 +358,7 @@ const About = () => {
                     <i className="icon-10"></i>
                   </div>
                   <h3>Step 1: Create Account</h3>
-                  <p>Easily create your free account, get quote</p>
+                  <p>Easily create your free account, Get free quote</p>
                 </div>
               </div>
             </div>
@@ -358,8 +366,10 @@ const About = () => {
               <div className="working-block-two">
                 <div className="inner-box">
                   {/* Background shape for the working block */}
+
                   <div className="shape" style={{ backgroundImage: `url(${shape19})` }}></div>
                   <div className="icon-box">
+
                     {/* ICON FONT USAGE: This `<i>` tag with a class expects a CSS icon font library to be loaded. */}
                     <i className="icon-11"></i>
                   </div>
@@ -378,6 +388,7 @@ const About = () => {
                   </div>
                   <h3>Configure payments</h3>
                   <p>Securely manage payment or host a free event</p>
+
                 </div>
               </div>
             </div>
@@ -387,7 +398,7 @@ const About = () => {
       {/* --- Working Style Three Section End --- */}
 
       {/* --- Testimonials Section --- */}
-      {/* This section renders the Testimonials carousel component. */}
+   
       <Testimonials />
       {/* --- Testimonials Section End --- */}
 
