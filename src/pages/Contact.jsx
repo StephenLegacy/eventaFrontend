@@ -1,70 +1,33 @@
 import React from 'react';
-import './contact.css'; // Assuming contact.css is in the same directory as Contact.jsx
+import './contact.css';
 
-// Corrected import paths for images
+// Import images
 import pattern1 from '../assets/images/shapes/shape-1.png';
 import pattern2 from '../assets/images/shapes/shape-2.png';
-import shape68 from '../assets/images/shapes/shape-68.png';
-import shape69 from '../assets/images/shapes/shape-69.png';
 import shape23 from '../assets/images/shapes/shape-23.png';
 import shape24 from '../assets/images/shapes/shape-24.png';
 import shape25 from '../assets/images/shapes/shape-25.png';
 import shape26 from '../assets/images/shapes/shape-26.png';
+import shape68 from '../assets/images/shapes/shape-68.png';
+import shape69 from '../assets/images/shapes/shape-69.png';
 
-// import logo from './assets/logo.png' --- use this 
-
-// Contact component, now the default export with plain CSS styling.
 export default function Contact() {
   return (
-    <div className="font-sans antialiased text-gray-800">
+    <div className="contact-page">
       {/* Page Title Section */}
       <section className="page-title-section">
         <div className="pattern-layer">
-          <div
-            className="pattern-1"
-            style={{ backgroundImage: `url(${pattern1})` }}
-          >
-
-          </div>
-          <div
-            className="pattern-2"
-            style={{ backgroundImage: `url(${pattern2})` }}
-          ></div>
+          <div className="pattern-1" style={{ backgroundImage: `url(${pattern1})` }}></div>
+          <div className="pattern-2" style={{ backgroundImage: `url(${pattern2})` }}></div>
         </div>
         <div className="auto-container content-box">
           <h1>Contact Us</h1>
           <ul className="bread-crumb clearfix">
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li>Contact</li>
           </ul>
         </div>
       </section>
-      {/* End Page Title Section */}
-
-      {/* Google Map Section */}
-      <section className="google-map-section">
-        <div className="pattern-layer">
-          <div
-            className="pattern-1"
-            style={{ backgroundImage: `url(${shape68})` }}
-          ></div>
-          <div
-            className="pattern-2"
-            style={{ backgroundImage: `url(${shape69})` }}
-          ></div>
-        </div>
-        <div className="auto-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.881728398216!2d36.7202481!3d-1.3224236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11fcbbfe85e9%3A0x3c6076bda06f6f59!2sCrossroads%20Mall%2C%20Langata%20Rd%2C%20Karen%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1715853083629!5m2!1sen!2ske"
-            className="map-iframe"
-            allowFullScreen=""
-            aria-hidden="false"
-            tabIndex="0"
-            title="Google Map of Crossroads Mall, Karen, Nairobi"
-          ></iframe>
-        </div>
-      </section>
-      {/* End Google Map Section */}
 
       {/* Contact Info Section */}
       <section className="contact-info-section">
@@ -74,14 +37,11 @@ export default function Contact() {
             <h2>Contact Information</h2>
           </div>
           <div className="info-blocks-grid">
-
             {/* Location Block */}
             <div className="info-block">
               <div className="icon-box">📍</div>
               <h3>Our Location</h3>
-              <p>
-                Crossroads Mall - Karen, <br />Nairobi
-              </p>
+              <p>Crossroads Mall - Karen, <br />Nairobi</p>
             </div>
 
             {/* Email Address Block */}
@@ -107,7 +67,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      {/* End Contact Info Section */}
 
       {/* Contact Form Section */}
       <section className="contact-section">
@@ -135,50 +94,48 @@ export default function Contact() {
               </div>
               <div className="col-span-full message-btn">
                 <button className="theme-btn" type="submit" name="submit-form">
-                  Post a Comment
+                  Send Message
                 </button>
               </div>
             </form>
           </div>
         </div>
       </section>
-      {/* End Contact Form Section */}
+
+      {/* Google Map Section - Moved above CTA */}
+      <section className="google-map-section">
+        <div className="pattern-layer">
+          <div className="pattern-1" style={{ backgroundImage: `url(${shape68})` }}></div>
+          <div className="pattern-2" style={{ backgroundImage: `url(${shape69})` }}></div>
+        </div>
+        <div className="auto-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.881728398216!2d36.7202481!3d-1.3224236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11fcbbfe85e9%3A0x3c6076bda06f6f59!2sCrossroads%20Mall%2C%20Langata%20Rd%2C%20Karen%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1715853083629!5m2!1sen!2ske"
+            className="map-iframe"
+            allowFullScreen=""
+            aria-hidden="false"
+            tabIndex="0"
+            title="Google Map of Crossroads Mall, Karen, Nairobi"
+          ></iframe>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="cta-section">
         <div className="pattern-layer">
-          <div
-            className="pattern-1"
-            style={{ backgroundImage: `url(${shape23})` }}
-          ></div>
-          <div
-            className="pattern-2"
-            style={{ backgroundImage: `url(${shape24})` }}
-          ></div>
-          <div
-            className="pattern-3"
-            style={{ backgroundImage: `url(${shape25})` }}
-          ></div>
-          <div
-            className="pattern-4"
-            style={{ backgroundImage: `url(${shape26})` }}
-          ></div>
+          <div className="pattern-1" style={{ backgroundImage: `url(${shape23})` }}></div>
+          <div className="pattern-2" style={{ backgroundImage: `url(${shape24})` }}></div>
+          <div className="pattern-3" style={{ backgroundImage: `url(${shape25})` }}></div>
+          <div className="pattern-4" style={{ backgroundImage: `url(${shape26})` }}></div>
         </div>
         <div className="max-w-5xl-container inner-content">
-          <h2>
-            The #1 rated Event Ticketing & management app <br /> on the planet
-          </h2>
+          <h2>The #1 rated Event Ticketing & management app on the planet</h2>
           <div className="btn-box">
-            <a href="#" className="btn-white">
-              Get Quote Now
-            </a>
-            <a href="#" className="btn-blue">
-              Need Support
-            </a>
+            <a href="#" className="btn-white">Get Quote Now</a>
+            <a href="#" className="btn-blue">Need Support</a>
           </div>
         </div>
       </section>
-      {/* End CTA Section */}
     </div>
   );
 }
