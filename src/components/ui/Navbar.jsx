@@ -9,7 +9,7 @@ function Navbar() {
     <nav className="navbar glass-morphic">
       <div className="navbar-container">
         <Link to="/" className="navbar-brand">
-          EventHub
+          Eventa
         </Link>
         
         <div className="navbar-links">
@@ -17,14 +17,14 @@ function Navbar() {
           
           {user ? (
             <>
-              <Link to="/dashboard" className="nav-link">Dashboard</Link>
-              <button onClick={logout} className="btn btn-outline">Logout</button>
+              {/* <Link to="/dashboard" className="nav-link">Dashboard</Link>
+              <button onClick={logout} className="btn btn-outline">Logout</button> */}
             </>
           ) : (
             <>
-              <Link to="/login" className="nav-link">Login</Link>
               <Link to="/contact" className="nav-link">Contact Us</Link>
               <Link to="/about" className="nav-link">About Us</Link>
+              <Link to="/login" className="nav-link">Login</Link>
               <Link to="/register" className="btn btn-primary">Register</Link>
             </>
           )}
