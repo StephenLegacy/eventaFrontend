@@ -428,7 +428,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
   .cta-section .btn-box .btn-white {
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    background-color: rgba(255, 255, 255, 0.9); 
     color: #1e3a8a;
   }
   .cta-section .btn-box .btn-white:hover {
@@ -445,8 +445,6 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   }
-
-
 
 /** contact-info-section **/
 
@@ -504,9 +502,8 @@ body {
     color: var(-theme-color);
   }
   
-  
   /** contact-section **/
-  
+
   .contact-section{
     position: relative;
   }
@@ -554,14 +551,7 @@ body {
     border-color: var(--theme-color);
   }
   
-  
-  
-  /** rtl-css **/
-  
-  
-  
-  
-  /** responsive-css **/
+
   
   @media only screen and (max-width: 1200px){
   
@@ -588,45 +578,4 @@ body {
   @media only screen and (max-width: 499px){
   
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+ 
