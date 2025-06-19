@@ -14,57 +14,6 @@ export const register = async (userData) => {
   }
 };
 
-// export const login = async (credentials) => {
-//   try {
-//     const response = await api.post('/auth/login', credentials);
-    
-//     // Validate response structure
-//     if (!response.data?.token) {
-//       throw new Error('Invalid response structure - no token received');
-//     }
-    
-//     // Store token securely
-//     localStorage.setItem('token', response.data.token);
-    
-//       // Return normalized user data
-//     const user = response.data.data;
-
-//     return {
-//       id: user.id,
-//       email: user.email || credentials.email,
-//       name: user.name,
-//       role: user.role,
-//       ...user // Spread additional fields
-//     };
-    
-//   // } catch (error) {
-//   //   console.error('Login error:', {
-//   //     status: error.response?.status,
-//   //     data: error.response?.data,
-//   //     message: error.message
-//   //   });
-    
-//   //   throw new Error(
-//   //     error.response?.data?.message || 
-//   //     error.response?.data?.error ||
-//   //     'Login failed. Please try again.'
-//   //   );
-//   // }
-//   } catch (error) {
-//   const status = error.response?.status;
-//   const data = error.response?.data;
-
-//   console.error('Login error:', {
-//     status,
-//     data,
-//     message: error.message
-//   });
-
-//   const message = data?.message || data?.error || 'Login failed. Please try again.';
-//   throw new Error(message);
-// }
-
-// };
 export const login = async (credentials) => {
   try {
     const response = await api.post('/auth/login', credentials);
@@ -112,5 +61,5 @@ export const checkAuth = async () => {
 
 export const logout = () => {
   localStorage.removeItem('token');
-  // Optional: Add API call to backend logout if needed
+ 
 };
