@@ -31,7 +31,6 @@ export function AuthProvider({ children }) {
   }, []);
 
   const logout = () => {
-    // In a real app, you would call a logout API endpoint
     localStorage.removeItem('token');
     setUser(null);
   };
