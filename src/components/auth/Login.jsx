@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
 import { login } from '../../services/auth';
+ 
 
 // CSS string remains the same as in your original code
 const scopedLoginCss = `
@@ -323,6 +325,7 @@ function Login() {
 
 export default function App() {
   return (
+    
     <div style={{
       minHeight: '100vh',
       display: 'flex',
@@ -331,6 +334,7 @@ export default function App() {
       background: 'linear-gradient(135deg, #a8c0ff, #3f2b96)',
       fontFamily: '"Inter", sans-serif'
     }}>
+
       <Login />
     </div>
   );
