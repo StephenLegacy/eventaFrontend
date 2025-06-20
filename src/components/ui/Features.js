@@ -1,5 +1,5 @@
 import React from 'react';
-import './features.css'; // Ensure features.css is in the correct path
+import './features.css'; 
 
 // Import image assets
 import shape34 from '../../assets/images/shapes/shape-34.png'; // Path from src/components/ui/ to src/assets/images/shapes/shape-34.png
