@@ -2,8 +2,6 @@ import React from 'react';
 import './contact.css';
 
 // Import images
-import pattern1 from '../assets/images/shapes/shape-1.png';
-import pattern2 from '../assets/images/shapes/shape-2.png';
 import shape23 from '../assets/images/shapes/shape-23.png';
 import shape24 from '../assets/images/shapes/shape-24.png';
 import shape25 from '../assets/images/shapes/shape-25.png';
@@ -15,20 +13,7 @@ export default function Contact() {
   return (
     <div className="contact-page">
       {/* Page Title Section */}
-      <section className="page-title-section">
-        <div className="pattern-layer">
-          <div className="pattern-1" style={{ backgroundImage: `url(${pattern1})` }}></div>
-          <div className="pattern-2" style={{ backgroundImage: `url(${pattern2})` }}></div>
-        </div>
-        <div className="auto-container content-box">
-          <h1>Contact Us</h1>
-          <ul className="bread-crumb clearfix">
-            <li><a href="/">Home</a></li>
-            <li>Contact</li>
-          </ul>
-        </div>
-      </section>
-
+  
       {/* Contact Info Section */}
       <section className="contact-info-section">
         <div className="auto-container">
