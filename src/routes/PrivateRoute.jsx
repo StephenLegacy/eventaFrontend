@@ -10,7 +10,7 @@ import useAuth from '../hooks/useAuth';
  */
 function PrivateRoute() {
   const { user } = useAuth();
-  const location = useLocation(); // ✅ Correct way to access current location
+  const location = useLocation(); 
 
   return user ? (
     <Outlet />
