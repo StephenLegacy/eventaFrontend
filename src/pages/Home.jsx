@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 // import { getFeaturedEvents } from '../services/events'; // to be used later
 import EventCard from '../components/events/EventCard';
-// import Footer from '../components/Footer.js';
 import Features from '../components/ui/Features.js';
 // import Pricing from '../components/Pricing.js';
 import Services from '../components/ui/Services.js';
