@@ -1,6 +1,6 @@
 .env
 
-# dependencies
+# dependencies not to add 
 /node_modules
 /.pnp
 .pnp.js
