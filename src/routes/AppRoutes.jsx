@@ -18,7 +18,8 @@ function AppRoutes({ setIsAuthenticated }) {
       <Route path="/events" element={<Events />} />
       <Route path="/events/:id" element={<EventDetail />} />
       <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
-      <Route path="/register" element={<Register setIsAuthenticated={setIsAuthenticated} />} />
+      {/* <Route path="/register" element={<Register setIsAuthenticated={setIsAuthenticated} />} /> */}
+      <Route path="/register" element={<Register />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/about" element={<About />} />
       <Route path="/testimonials" element={<Testimonials />} />
