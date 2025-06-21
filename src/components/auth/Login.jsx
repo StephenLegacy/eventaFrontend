@@ -1,7 +1,9 @@
+// src/components/auth/Login.jsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import { login } from '../../services/auth';
+import { AuthContext } from '../../context/AuthContext';
  
 
 // CSS string remains the same as in your original code
@@ -216,6 +218,8 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  const { dispatch } = useContext(AuthContext);  // get dispatch from context
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -226,6 +230,9 @@ function Login() {
       // Use the actual login service instead of mock
       const userData = await login({ email, password });
       
+       // Dispatch login to context to update state & localStorage
+      dispatch({ type: 'LOGIN', payload: userData });
+
       setSuccessMessage('Login successful! Redirecting to dashboard...');
       
       // Redirect after successful login

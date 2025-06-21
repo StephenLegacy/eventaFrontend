@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
+import { AuthContextProvider } from './context/AuthContext';
 import AppRoutes from './routes/AppRoutes';
 import Navbar from './components/ui/Navbar';
 import Footer from './components/ui/Footer';
@@ -7,7 +7,7 @@ import Footer from './components/ui/Footer';
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
+       <AuthContextProvider>
         <div className="app-container">
           <Navbar />
           <main className="main-content">
@@ -15,7 +15,7 @@ function App() {
           </main>
           <Footer />
         </div>
-      </AuthProvider>
+        </AuthContextProvider>
     </BrowserRouter>
   );
 }
