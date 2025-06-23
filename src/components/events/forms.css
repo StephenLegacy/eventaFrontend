@@ -1,0 +1,154 @@
+/* Form Container - More Visible Glass Effect */
+.form-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 10px 35px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Text Contrast */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #2d3748; /* Dark gray for better contrast */
+  font-size: 2rem;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Form Elements - Darker with Glass Overlay */
+.form-group label {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #2d3748; /* Darker text */
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(45, 55, 72, 0.2); /* Darker border */
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.4); /* More opaque */
+  color: #2d3748; /* Dark text */
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+
+/* Textarea Specific */
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* Form Rows - Better Spacing */
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* File Input - Custom Styling */
+.form-group input[type="file"] {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px dashed rgba(45, 55, 72, 0.3);
+}
+
+/* Buttons - More Prominent */
+.form-actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.btn {
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Alerts - More Visible */
+.alert {
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.alert-danger {
+  background: rgba(245, 101, 101, 0.3);
+  border: 1px solid var(--danger-color);
+  color: #c53030; /* Darker red */
+}
+
+/* Placeholders - Subtle but Visible */
+::placeholder {
+  color: rgba(45, 55, 72, 0.5);
+  opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 1.75rem;
+    margin: 1.25rem;
+    border-radius: 1rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .form-container h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+}
+
+/* Glass Morphic Enhancement Variables */
+:root {
+  --primary-color: #6c63ff;
+  --danger-color: #f56565;
+  --text-dark: #2d3748;
+  --text-light: #f7fafc;
+}
