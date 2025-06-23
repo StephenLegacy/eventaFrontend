@@ -305,7 +305,6 @@ function Register() {
     setError('');
 
     try {
-      // Using the (now mocked) register function
       await register({
         name: formData.name,
         email: formData.email,
