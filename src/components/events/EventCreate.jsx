@@ -1,23 +1,17 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createEvent } from '../../services/events';
+import useAuth from '../../hooks/useAuth';
 import './forms.css';
 
-/**
- * Event creation form for organizers
- * Features:
- * - Rich form with all event details
- * - Image upload handling
- * - Date/time pickers
- * - Form validation
- */
-function EventCreate() {
+export default function EventCreate() {
+  const { user } = useAuth();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: '',
     description: '',
     date: '',
-    time: '',
+    time: '19:00', // Default time
     location: '',
     price: 0,
     capacity: 100,
@@ -32,10 +26,6 @@ function EventCreate() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleImageChange = (e) => {
-    setImage(e.target.files[0]);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -43,15 +33,29 @@ function EventCreate() {
 
     try {
       const formPayload = new FormData();
+      
+      // Append all form data
       Object.entries(formData).forEach(([key, value]) => {
         formPayload.append(key, value);
       });
-      if (image) formPayload.append('image', image);
+      
+      // Add organizer ID from auth context
+      formPayload.append('organizer', user.id);
+      
+      if (image) {
+        formPayload.append('image', image);
+      }
 
-      await createEvent(formPayload);
-      navigate('/dashboard');
+      const response = await createEvent(formPayload);
+      
+      if (!response.success) {
+        throw new Error(response.message || 'Event creation failed');
+      }
+
+      navigate('/dashboard', { state: { eventCreated: true } });
     } catch (err) {
-      setError(err.response?.data?.message || 'Failed to create event');
+      console.error('Creation Error:', err.response?.data || err.message);
+      setError(err.response?.data?.message || err.message || 'Failed to create event');
     } finally {
       setLoading(false);
     }
@@ -60,11 +64,18 @@ function EventCreate() {
   return (
     <div className="form-container glass-morphic">
       <h2>Create New Event</h2>
-      {error && <div className="alert alert-danger">{error}</div>}
+      {error && (
+        <div className="alert alert-danger">
+          <strong>Error:</strong> {error}
+          {error.includes('required') && (
+            <p className="error-hint">Please fill all required fields</p>
+          )}
+        </div>
+      )}
       
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         <div className="form-group">
-          <label htmlFor="title">Event Title</label>
+          <label htmlFor="title">Event Title *</label>
           <input
             type="text"
             id="title"
@@ -72,24 +83,26 @@ function EventCreate() {
             value={formData.title}
             onChange={handleChange}
             required
+            minLength="5"
           />
         </div>
         
         <div className="form-group">
-          <label htmlFor="description">Description</label>
+          <label htmlFor="description">Description *</label>
           <textarea
             id="description"
             name="description"
             value={formData.description}
             onChange={handleChange}
             required
-            rows="4"
+            rows="5"
+            minLength="10"
           />
         </div>
         
         <div className="form-row">
           <div className="form-group">
-            <label htmlFor="date">Date</label>
+            <label htmlFor="date">Date *</label>
             <input
               type="date"
               id="date"
@@ -97,11 +110,12 @@ function EventCreate() {
               value={formData.date}
               onChange={handleChange}
               required
+              min={new Date().toISOString().split('T')[0]}
             />
           </div>
           
           <div className="form-group">
-            <label htmlFor="time">Time</label>
+            <label htmlFor="time">Time *</label>
             <input
               type="time"
               id="time"
@@ -114,7 +128,7 @@ function EventCreate() {
         </div>
         
         <div className="form-group">
-          <label htmlFor="location">Location</label>
+          <label htmlFor="location">Location *</label>
           <input
             type="text"
             id="location"
@@ -136,12 +150,11 @@ function EventCreate() {
               onChange={handleChange}
               min="0"
               step="0.01"
-              required
             />
           </div>
           
           <div className="form-group">
-            <label htmlFor="capacity">Capacity</label>
+            <label htmlFor="capacity">Capacity *</label>
             <input
               type="number"
               id="capacity"
@@ -154,7 +167,7 @@ function EventCreate() {
           </div>
           
           <div className="form-group">
-            <label htmlFor="category">Category</label>
+            <label htmlFor="category">Category *</label>
             <select
               id="category"
               name="category"
@@ -177,19 +190,31 @@ function EventCreate() {
             type="file"
             id="image"
             name="image"
-            onChange={handleImageChange}
+            onChange={(e) => setImage(e.target.files[0])}
             accept="image/*"
           />
+          <small>Max 5MB (JPEG/PNG)</small>
         </div>
         
         <div className="form-actions">
-          <button type="submit" className="btn btn-primary" disabled={loading}>
-            {loading ? 'Creating...' : 'Create Event'}
+          <button 
+            type="submit" 
+            className="btn btn-primary" 
+            disabled={loading}
+          >
+            {loading ? (
+              <>
+                <span className="spinner"></span> Creating...
+              </>
+            ) : (
+              'Create Event'
+            )}
           </button>
           <button 
             type="button" 
             className="btn btn-outline"
             onClick={() => navigate(-1)}
+            disabled={loading}
           >
             Cancel
           </button>
@@ -198,5 +223,3 @@ function EventCreate() {
     </div>
   );
 }
-
-export default EventCreate;
