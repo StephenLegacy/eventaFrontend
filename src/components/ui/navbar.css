@@ -146,3 +146,17 @@
     padding: 0.6rem 1.5rem;
   }
 }
+
+.logout-btn {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.logout-btn:hover {
+ 
+  opacity: 0.8;
+  text-decoration: underline;
+}
