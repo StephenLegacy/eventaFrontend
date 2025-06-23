@@ -100,7 +100,7 @@ function Home() {
                     <div className="btn-box">
                         <Link to="/create-event" className="theme-btn btn-one mr_20">Create Event</Link>
                         <Link to="/events" className="theme-btn btn-two mr_20">Browse Events</Link>
-                        <Link to="/signup" className="theme-btn btn-two">Get Started Free</Link>
+                        <Link to="/register" className="theme-btn btn-two">Get Started Free</Link>
                     </div>
                 </div>
                 <figure className="image-box">
