@@ -7,7 +7,7 @@ import Footer from './components/ui/Footer';
 function App() {
   return (
     <BrowserRouter>
-       <AuthContextProvider>
+      <AuthContextProvider> {/* Changed from AuthContextProvider to AuthProvider */}
         <div className="app-container">
           <Navbar />
           <main className="main-content">
@@ -15,7 +15,7 @@ function App() {
           </main>
           <Footer />
         </div>
-        </AuthContextProvider>
+      </AuthContextProvider>
     </BrowserRouter>
   );
 }
