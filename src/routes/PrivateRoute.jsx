@@ -1,22 +1,21 @@
-
-import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { Navigate, useLocation, Outlet } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 /**
- * Private route component to protect authenticated routes
- * Features:
- * - Redirects unauthenticated users to login
- * - Preserves intended location for post-login redirect
+ * Enhanced PrivateRoute component that handles:
+ * - Route protection
+ * - Nested routes (Outlet)
+ * - Single child routes
+ * - Proper redirect state
  */
-function PrivateRoute() {
+export default function PrivateRoute({ children }) {
   const { user } = useAuth();
-  const location = useLocation(); 
+  const location = useLocation();
 
-  return user ? (
-    <Outlet />
-  ) : (
-    <Navigate to="/login" replace state={{ from: location }} />
-  );
+  if (!user) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  // Handle nested routes
+  return children ? children : <Outlet />;
 }
-
-export default PrivateRoute;
